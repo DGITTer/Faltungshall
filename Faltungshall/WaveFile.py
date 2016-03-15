@@ -3,7 +3,6 @@ import numpy as np
 from Helper import *
 from pylab import *
 
-
 class WaveFile(object):
     
     __path = str
