@@ -38,6 +38,7 @@ class Paths(object):
 # YM2 = 'minster1_bformat_48k.wav'
 # MH1 = 'mh3_000_ortf_48k.wav'
 # MH2 = 'mh3_000_bformat_48k.wav'
+# Aufnahme = 'sprachaufnahme.wav'
 
 paths = Paths('Samples\\')
 
@@ -47,8 +48,11 @@ MH1 = WaveFile(paths.getMH1())
 MH2 = WaveFile(paths.getMH2())
 Aufnahme = WaveFile(paths.getAufnahme())
 
-Aufnahme.plot()
-#Aufnahme.print()
+Aufnahme.print()
+#var = Aufnahme.getFS() * YM1.getFS()
+#print(var.__len__())
+#Aufnahme.plot()
+#
 
 #YM1.plot()
 

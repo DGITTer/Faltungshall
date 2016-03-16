@@ -39,6 +39,7 @@
     <Content Include="Samples\mh3_000_ortf_48k.wav" />
     <Content Include="Samples\minster1_000_ortf_48k.wav" />
     <Content Include="Samples\minster1_bformat_48k.wav" />
+    <Content Include="Samples\sprachaufnahme.wav" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

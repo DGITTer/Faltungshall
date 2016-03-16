@@ -12,6 +12,9 @@ class WaveFile(object):
     __a = np.array # Array
     __ch = np.array # channel
     __fs = np.array
+
+    def getFS(self):
+        return self.__fs
     
     def __init__(self, path):   
         self.__path = path;   
@@ -22,7 +25,7 @@ class WaveFile(object):
             quit()
         self.__ch = self.__a[:,0]
         self.__fs = np.fft.fft(self.__ch)
-        
+          
     def plot(self):
         self.__ch = self.__a[:,0]
         self.__ch = self.__ch / (2. ** (self.__sw * 8 - 1)) # 3 Byte * 8 Bit - 1 (weil bereich -2^23 - (2^23)-1)
