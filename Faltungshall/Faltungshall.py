@@ -28,8 +28,15 @@ class Paths(object):
     def getMH2(self):
         return self.__mh2path
 
+
+
 # Damit man nicht alle Paths für jeden PC neu angeben muss
-paths = Paths('C:\\Users\\david\\Source\\Repos\\Faltungshall\\Faltungshall\\Samples\\')
+# YM1 = 'minster1_000_ortf_48k.wav'
+# YM2 = 'minster1_bformat_48k.wav'
+# MH1 = 'mh3_000_ortf_48k.wav'
+# MH2 = 'mh3_000_bformat_48k.wav'
+
+paths = Paths('Samples\\')
 
 YM1 = WaveFile(paths.getYM1())
 YM2 = WaveFile(paths.getYM2())
