@@ -34,6 +34,7 @@
     <Folder Include="Samples\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Samples\Anleitung Audacity Tonaufnahme.pdf" />
     <Content Include="Samples\mh3_000_bformat_48k.wav" />
     <Content Include="Samples\mh3_000_ortf_48k.wav" />
     <Content Include="Samples\minster1_000_ortf_48k.wav" />

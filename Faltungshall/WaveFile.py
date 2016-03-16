@@ -2,6 +2,7 @@ from matplotlib import pylab
 import numpy as np
 from Helper import *
 from pylab import *
+from builtins import Exception
 
 class WaveFile(object):
     
@@ -13,8 +14,12 @@ class WaveFile(object):
     __fs = np.array
     
     def __init__(self, path):   
-        self.__path = path;     
-        self.__fr, self.__sw, self.__a = readwav(self.__path)
+        self.__path = path;   
+        try:
+            self.__fr, self.__sw, self.__a = readwav(self.__path)
+        except :
+            print('Lesen der Datei: "' + self.__path + '" schlug fehl!') 
+            quit()
         self.__ch = self.__a[:,0]
         self.__fs = np.fft.fft(self.__ch)
         
