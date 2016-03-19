@@ -1,8 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 from matplotlib import pylab
 import numpy as np
 from Helper import *
 from pylab import *
-from builtins import Exception
+# from builtins import Exception
 
 class WaveFile(object):
     
@@ -13,11 +16,21 @@ class WaveFile(object):
     __ch = np.array # channel
     __fs = np.array
 
+    def getArray(self):
+        return self.__a
+
+
+    def getFramerate(self):
+        return self.__fr
+
+    def getChannel(self):
+        return self.__ch
+
     def getFS(self):
         return self.__fs
     
-    def __init__(self, path):   
-        self.__path = path;   
+    def __init__(self, path):
+        self.__path = path
         try:
             self.__fr, self.__sw, self.__a = readwav(self.__path)
         except :
@@ -29,14 +42,14 @@ class WaveFile(object):
     def plot(self):
         self.__ch = self.__a[:,0]
         self.__ch = self.__ch / (2. ** (self.__sw * 8 - 1)) # 3 Byte * 8 Bit - 1 (weil bereich -2^23 - (2^23)-1)
-        timeArray = np.linspace(0, len(self.__ch) / self.__fr, num = len(self.__ch))
+        timeArray = np.linspace(0, len(self.__ch) / self.__fr, num=len(self.__ch))
         plt.plot(timeArray, self.__ch)
         plt.ylabel('Amplitude')
         plt.xlabel('Time (s)')
         plt.title(self.__path)
         plt.show()
 
-    def print(self):
+    def printAttributes(self):
         print("Filename: " + self.__path)
         print("FrameRate: " + str(self.__fr))
         print("Sample width in bytes: " + str(self.__sw))
