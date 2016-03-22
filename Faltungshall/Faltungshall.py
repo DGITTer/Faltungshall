@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-from WaveFile import WaveFile
 
 from WaveFile import *
-from scipy import signal
+#from scipy import signal
 
 class Paths(object):
     
@@ -51,20 +51,22 @@ MH1 = WaveFile(paths.getMH1())
 MH2 = WaveFile(paths.getMH2())
 Aufnahme = WaveFile(paths.getAufnahme())
 
-YM1.printAttributes()
-# h = convolve(Aufnahme.getChannel(), YM1.getChannel(), mode='same')
-g = signal.fftconvolve(Aufnahme.getChannel(), YM1.getChannel(), mode='same') / sum(YM1.getChannel())
-# print(h)
-print("Framerates: Aufnahme, Sample", Aufnahme.getFramerate(), YM1.getFramerate())
-print(Aufnahme.getFramerate())
-print(YM1.getFramerate())
-# writewav24("Samples/output.wav", YM1.getFramerate(), h)
-writewav24("Samples/output.wav", YM1.getFramerate(), YM1.getChannel())
-writewav24("Samples/output2.wav", YM1.getFramerate(), g)
-# Aufnahme.printAttributes()
-#var = Aufnahme.getFS() * YM1.getFS()
-#print(var.__len__())
-#Aufnahme.plot()
+#YM1.printAttributes()
+## h = convolve(Aufnahme.getChannel(), YM1.getChannel(), mode='same')
+#g = signal.fftconvolve(Aufnahme.getChannel(), YM1.getChannel(), mode='same') / sum(YM1.getChannel())
+## print(h)
+#print("Framerates: Aufnahme, Sample", Aufnahme.getFramerate(), YM1.getFramerate())
+#print(Aufnahme.getFramerate())
+#print(YM1.getFramerate())
+## writewav24("Samples/output.wav", YM1.getFramerate(), h)
+#writewav24("Samples/output.wav", YM1.getFramerate(), YM1.getChannel())
+#writewav24("Samples/output2.wav", YM1.getFramerate(), g)
+## Aufnahme.printAttributes()
+##var = Aufnahme.getFS() * YM1.getFS()
+##print(var.__len__())
+##Aufnahme.plot()
+
+Aufnahme.printAttributes()
 #
 
 #YM1.plot()

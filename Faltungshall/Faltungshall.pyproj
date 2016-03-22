@@ -26,6 +26,7 @@
     <Compile Include="Helper.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="thinkdsp.py" />
     <Compile Include="WaveFile.py">
       <SubType>Code</SubType>
     </Compile>
