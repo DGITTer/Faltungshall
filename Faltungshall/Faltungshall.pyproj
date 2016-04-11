@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>39edb5e3-7a22-4c3a-bc7a-e3683af32d14</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Notebook.py</StartupFile>
+    <StartupFile>Test.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -31,6 +31,9 @@
     <Compile Include="Notebook.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Test.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="thinkdsp.py" />
     <Compile Include="thinkplot.py" />
     <Compile Include="WaveFile.py">
@@ -41,13 +44,17 @@
     <Folder Include="Samples\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Samples\180960__kleeb__gunshot.wav" />
+    <Content Include="Samples\92002__jcveliz__violin-origional.wav" />
     <Content Include="Samples\Anleitung Audacity Tonaufnahme.pdf" />
     <Content Include="Samples\aufnahme3.wav" />
+    <Content Include="Samples\aufnahme3_44100.wav" />
     <Content Include="Samples\bottledungeon1_sf_edited.wav" />
     <Content Include="Samples\dirac.wav" />
     <Content Include="Samples\mh3_000_bformat_48k.wav" />
     <Content Include="Samples\mh3_000_ortf_48k.wav" />
     <Content Include="Samples\minster1_000_ortf_48k.wav" />
+    <Content Include="Samples\minster1_000_ortf_48k_44100.wav" />
     <Content Include="Samples\minster1_bformat_48k.wav" />
     <Content Include="Samples\sprachaufnahme.wav" />
   </ItemGroup>

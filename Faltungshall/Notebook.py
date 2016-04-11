@@ -121,16 +121,16 @@ mh_faltung_welle.make_audio()
 
 
 
-#d_faltung_spektrum = aufnahme_spectrum * d_spektrum
-#d_faltung_welle = d_faltung_spektrum.make_wave()
-##d_faltung_welle.normalize()
-#d_faltung_welle.write('D_Ergebnis.wav')
+d_faltung_spektrum = aufnahme_spectrum * d_spektrum
+d_faltung_welle = d_faltung_spektrum.make_wave()
+#d_faltung_welle.normalize()
+d_faltung_welle.write('D_Ergebnis.wav')
 #d_faltung_welle.plot()
 #thinkplot.config(xlabel='Time (s)', ylim=[-1.05, 1.05])
 
-d_faltung_welle = aufnahme.convolve(dirac)
-print(d_faltung_welle.__len__())
-d_faltung_welle.write('D_Ergebnis.wav')
+#d_faltung_welle = aufnahme.convolve(dirac)
+#print(d_faltung_welle.__len__())
+#d_faltung_welle.write('D_Ergebnis.wav')
 
 
 
