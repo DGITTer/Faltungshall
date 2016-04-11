@@ -13,7 +13,7 @@ import math
 
 import numpy as np
 import random
-import scipy
+from scipy import *
 import scipy.stats
 import scipy.fftpack
 import struct

@@ -5,13 +5,15 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>39edb5e3-7a22-4c3a-bc7a-e3683af32d14</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Faltungshall.py</StartupFile>
+    <StartupFile>Notebook.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>Faltungshall</Name>
     <RootNamespace>Faltungshall</RootNamespace>
+    <InterpreterId>{9a7a9026-48c1-4688-9d5d-e5699d47d074}</InterpreterId>
+    <InterpreterVersion>3.5</InterpreterVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -26,6 +28,9 @@
     <Compile Include="Helper.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Notebook.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="thinkdsp.py" />
     <Compile Include="thinkplot.py" />
     <Compile Include="WaveFile.py">
@@ -37,11 +42,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Samples\Anleitung Audacity Tonaufnahme.pdf" />
+    <Content Include="Samples\aufnahme3.wav" />
+    <Content Include="Samples\bottledungeon1_sf_edited.wav" />
+    <Content Include="Samples\dirac.wav" />
     <Content Include="Samples\mh3_000_bformat_48k.wav" />
     <Content Include="Samples\mh3_000_ortf_48k.wav" />
     <Content Include="Samples\minster1_000_ortf_48k.wav" />
     <Content Include="Samples\minster1_bformat_48k.wav" />
     <Content Include="Samples\sprachaufnahme.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="{9a7a9026-48c1-4688-9d5d-e5699d47d074}\3.5" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

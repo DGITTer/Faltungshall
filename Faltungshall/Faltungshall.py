@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-from WaveFile import WaveFile
 
 from WaveFile import *
+#import thinkdsp as dsp
+#import thinkplot
 #from scipy import signal
 
 class Paths(object):
@@ -43,13 +45,16 @@ class Paths(object):
 # MH2 = 'mh3_000_bformat_48k.wav'
 # Aufnahme = 'sprachaufnahme.wav'
 
-paths = Paths('Samples\\')
+paths = Paths('./Samples/')
 
 YM1 = WaveFile(paths.getYM1())
 YM2 = WaveFile(paths.getYM2())
 MH1 = WaveFile(paths.getMH1())
 MH2 = WaveFile(paths.getMH2())
 Aufnahme = WaveFile(paths.getAufnahme())
+
+test = YM1.getFS() * Aufnahme.getFS()
+writewav24('test.wav', 48000, test);
 
 #YM1.printAttributes()
 ## h = convolve(Aufnahme.getChannel(), YM1.getChannel(), mode='same')
@@ -66,13 +71,17 @@ Aufnahme = WaveFile(paths.getAufnahme())
 ##print(var.__len__())
 ##Aufnahme.plot()
 
-Aufnahme.printAttributes()
+#Aufnahme.printAttributes()
 #
 
 #YM1.plot()
 
 #MH1.plot()
 #MH2.plotFrequencySpectre()
+
+
+#a = dsp.read_wave('./Samples/sprachaufnahme.wav')
+
 
 
 
