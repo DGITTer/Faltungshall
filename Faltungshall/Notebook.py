@@ -119,8 +119,6 @@ mh_faltung_welle.make_audio()
 
 
 
-
-
 d_faltung_spektrum = aufnahme_spectrum * d_spektrum
 d_faltung_welle = d_faltung_spektrum.make_wave()
 #d_faltung_welle.normalize()
@@ -134,8 +132,61 @@ d_faltung_welle.write('D_Ergebnis.wav')
 
 
 
+from datetime import datetime
+
+epoch = datetime(1970,1,1)
+
+d1 = datetime.utcnow()
+t1 = (d1 - epoch).total_seconds()
+
+aufnahme_spectrum = aufnahme.make_spectrum()
+ym_spektrum = ym_antwort.make_spectrum()
+ym_faltung_spektrum = aufnahme_spectrum * ym_spektrum
+ym_faltung_welle = ym_faltung_spektrum.make_wave()
+
+d2 = datetime.utcnow()
+t2 = (d2 - epoch).total_seconds()
+
+result = t2- t1
+print("result1: " + str(result))
+
+d1 = datetime.utcnow()
+t1 = (d1 - epoch).total_seconds()
+
+#ym_faltung_welle = aufnahme.convolve(ym_antwort)
+
+d2 = datetime.utcnow()
+t2 = (d2 - epoch).total_seconds()
+
+result = t2- t1
+print("result2: " + str(result))
 
 
+response = thinkdsp.read_wave('./Samples/180960__kleeb__gunshot.wav')
+
+start = 0.12
+response = response.segment(start=start)
+response.shift(-start)
+
+response.normalize()
+transfer = response.make_spectrum()
+
+violin = thinkdsp.read_wave('./Samples/92002__jcveliz__violin-origional.wav')
+
+start = 0.11
+violin = violin.segment(start=start)
+violin.shift(-start)
+
+violin.truncate(len(response))
+violin.normalize()
+spectrum = violin.make_spectrum()
+
+output = (spectrum * transfer).make_wave()
+output.normalize()
+output.write('violine.wav')
+#violin.make_audio()
+
+#output.make_audio()
 
 
 
